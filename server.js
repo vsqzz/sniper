@@ -90,16 +90,17 @@ async function fetchLimiteds() {
 
             const entry = {
                 id: item.id,
-                name: item.name,
-                price,
-                rap,
-                stock,
-                imageUrl: thumbUrl,
-                creator: item.creatorName || 'Roblox',
-                score,
+                name: item.name || "Unknown",
+                price: price || 0,
+                rap: rap || 0,
+                stock: stock || 0,
+                imageUrl: thumbUrl || "",
+                creator: item.creatorName || "Roblox",
+                score: score || 0,
                 offsale: isOffsale,
                 badge: score >= 70 ? "potential" : "normal",
                 timestamp: Date.now(),
+                value: rap * 1.2
             };
 
             // history tracking
