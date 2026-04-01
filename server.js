@@ -9,16 +9,15 @@ let itemHistory = {};
 
 async function fetchLimiteds() {
     try {
-        const res = await axios.get('https://catalog.roblox.com/v1/search/items', {
-            params: {
-                category: 2,
-                limit: 30,
-                sortType: 3,
-                sortAggregation: 5,
-                includeNotForSale: true
-            },
-            headers: { 'User-Agent': 'Mozilla/5.0' }
-        });
+       const res = await axios.get('https://catalog.roblox.com/v1/search/items', {
+    params: {
+        category: 1,
+        limit: 10,
+        sortType: 1
+    }
+});
+
+console.log(res.data);
 
         const items = res.data?.data || [];
 
